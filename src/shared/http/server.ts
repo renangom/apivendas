@@ -1,22 +1,25 @@
 import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
+import 'express-async-errors'
 import cors from 'cors';
+import { errors } from 'celebrate'
 import routes from './routes';
 import AppError from '@shared/errors/AppError';
-import 'express-async-errors'
 import '@shared/typeorm'
-import {errors} from 'celebrate'
+import uploadConfig from '@config/upload'
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use('/files', express.static(uploadConfig.directory))
 app.use(routes);
 app.use(errors());
 
 //middleware para tratamento de erros
 app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
   //verificando se o erro recebido é uma instancia da nossa classe criada
-  if(error instanceof AppError){
+  if (error instanceof AppError) {
+    console.log("passei")
     return res.status(error.statusCode).json({
       status: 'error',
       message: error.message
