@@ -34,6 +34,8 @@ class ResetPasswordService{
 
     user.password = await bcrypt.hash(password,8);
 
+    await usersRepository.save(user);
+
   }
 
 }

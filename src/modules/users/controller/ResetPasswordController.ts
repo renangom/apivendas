@@ -8,5 +8,9 @@ class ResetPasswordController{
     const resetPassword = new ResetPasswordService();
 
     await resetPassword.execute({token,password})
+
+    return res.status(204).json();
   }
 }
+
+export default ResetPasswordController;
