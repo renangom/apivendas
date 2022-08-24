@@ -22,3 +22,5 @@ class ProfileController{
     return res.json(user)
   }
 }
+
+export default ProfileController;
