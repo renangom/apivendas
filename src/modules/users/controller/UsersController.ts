@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import CreateSessionService from "../services/CreateSessionService";
 import CreateUserService from "../services/CreateUserService";
 import ListUserService from "../services/ListUserService";
+import ShowProfileService from "../services/ShowProfileService";
 
 export default class UsersController{
   public async create(req: Request, res: Response):Promise<Response> {

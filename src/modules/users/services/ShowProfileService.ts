@@ -15,3 +15,5 @@ class ShowProfileService{
     return user;
   }
 }
+
+export default ShowProfileService;
