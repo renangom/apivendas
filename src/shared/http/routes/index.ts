@@ -4,13 +4,15 @@ import usersRoutes from "@modules/users/routes/users.routes";
 import sessionRouter from "@modules/users/routes/session.routes";
 import forgotPasswordRouter from "@modules/users/routes/password.routes";
 import profileRouter from "@modules/users/routes/profile.routes";
+import customerRouter from "@modules/customers/routes/customers.routes";
 const routes = Router();
 
 routes.use('/products', productsRoutes);
 routes.use('/users', usersRoutes);
 routes.use('/sessions', sessionRouter);
 routes.use('/password', forgotPasswordRouter);
-routes.use('/profile', profileRouter)
+routes.use('/profile', profileRouter);
+routes.use('/customer', customerRouter);
 
 routes.get('/',  (req: Request, res: Response) => {
   res.json({message: "Hello Dev"})

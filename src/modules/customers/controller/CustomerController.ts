@@ -54,3 +54,5 @@ class CustomerController {
     return res.json(customer);
   }
 }
+
+export default CustomerController
