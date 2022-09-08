@@ -15,7 +15,7 @@ interface IRequest{
 }
 
 
-class CreateProductService{
+class CreateOrderService{
   public async execute({customer_id, products}:IRequest):Promise<Order>{
     const ordersRepository = getCustomRepository(OrdersRepository);
     const customerRepository = getCustomRepository(CustomerRepository);
@@ -81,3 +81,5 @@ class CreateProductService{
     return order;
   }
 }
+
+export default CreateOrderService;
