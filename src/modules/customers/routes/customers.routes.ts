@@ -1,3 +1,4 @@
+import isAuthenticated from "@shared/http/middlewares/isAuthenticated";
 import { celebrate, Segments } from "celebrate";
 import { Router } from "express";
 import Joi from "joi";
@@ -8,6 +9,8 @@ import Customer from "../typeorm/entities/Customer";
 
 const customerRouter = Router();
 const customerController = new CustomerController();
+
+customerRouter.use(isAuthenticated);
 
 customerRouter.get('/', customerController.index);
 customerRouter.get('/:id', customerController.show);
