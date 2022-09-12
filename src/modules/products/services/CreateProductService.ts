@@ -1,3 +1,4 @@
+import RedisCache from "@shared/cache/RedisCache";
 import AppError from "@shared/errors/AppError";
 import { getCustomRepository } from "typeorm"
 import Product from "../typeorm/entities/Product";
@@ -18,6 +19,9 @@ class CreateProductService {
     //Pega o Repositório orm criado
     const productsRepository = getCustomRepository(ProductRepository);
 
+    //instanciando o redis
+    const redisCache = new RedisCache();
+
     //Checa se o produto já existe com um método do repositório
     const productExists = await productsRepository.findByName(name);
     if(productExists){
@@ -30,6 +34,8 @@ class CreateProductService {
       price,
       quantity
     })
+
+    await redisCache.invalidate('api-vendas-PRODUCT_LIST')
 
     //salva o produto
     await productsRepository.save(product)
