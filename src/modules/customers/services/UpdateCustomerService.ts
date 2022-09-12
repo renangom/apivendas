@@ -1,6 +1,7 @@
 import AppError from "@shared/errors/AppError";
+import { getCustomRepository } from "typeorm";
 import Customer from "../typeorm/entities/Customer";
-import { CustomerRepository } from "../typeorm/repositories/CustomerRepository";
+import CustomersRepository from "../typeorm/repositories/CustomerRepository";
 
 
 interface IRequest{
@@ -12,7 +13,7 @@ interface IRequest{
 
 class UpdateCustomerService{
   public async execute({id, name, email}:IRequest):Promise<Customer>{
-    const customerRepository = new CustomerRepository();
+    const customerRepository = getCustomRepository(CustomersRepository);
 
     const customer = await customerRepository.findById(id);
 
