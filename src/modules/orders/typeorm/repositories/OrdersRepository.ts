@@ -29,7 +29,12 @@ class OrdersRepository extends Repository<Order>{
       order_products: products
     });
 
-    await this.save(order);
+    try{
+      await this.save(order)
+    }catch(err){
+      console.log(err)
+    }
+
 
     return order;
   }
