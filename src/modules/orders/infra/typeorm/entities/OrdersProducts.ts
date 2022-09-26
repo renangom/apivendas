@@ -1,4 +1,4 @@
-import Product from "@modules/products/typeorm/entities/Product";
+import Product from "@modules/products/infra/typeorm/entities/Product";
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import Order from "./Order";
 
