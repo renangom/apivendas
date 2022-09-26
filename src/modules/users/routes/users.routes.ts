@@ -3,7 +3,7 @@ import { celebrate, Joi, Segments } from "celebrate";
 import UsersController from "../controller/UsersController";
 import multer from 'multer';
 import uploadConfig from '@config/upload';
-import isAuthenticated from "@shared/http/middlewares/isAuthenticated";
+import isAuthenticated from "@shared/infra/http/middlewares/isAuthenticated";
 import UserAvatarController from "../controller/UserAvatarController";
 
 const usersRoutes = Router();
