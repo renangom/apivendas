@@ -7,7 +7,9 @@ This API was made to learn more about programming skills and techniques using ty
 # Technologies
 - Typescript
 - TypeORM
-- Cache with Redis
+- Docker
+- Redis
+- PostgreSQL
 - JWT Authentication
 - Tests with Jest
 
