@@ -1,3 +1,17 @@
 # apivendas
-Esta API está sendo desenvolvida em Typescript, estou também utilizando Docker, assim é possível utilizar o postgres mais facilmente.
-Dentro deste projeto tenho como objetivo utilizar boas práticas, fazer os testes e também me aprofundar em Typeorm.
+
+This API was made to learn more about programming skills and techniques using typescript and other technologies and methodologies
+
+
+
+# Technologies
+- Typescript
+- TypeORM
+- Cache with Redis
+- JWT Authentication
+- Tests with Jest
+
+
+# Principles
+- SOLID
+- TDD
